@@ -21,7 +21,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className="min-h-screen w-full bg-[url('/sfwomen.jpg')] bg-no-repeat bg-cover text-white flex items-center justify-center relative">
-          <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.8)]"></div>
+          <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.4)]"></div>
           <div className="absolute flex items-center justify-center z-20 top-0 h-full w-full">
             <div className="w-[80%]">
               <img src="/Highlight_10.svg" className="w-[70px] lg:w-[200px]" />
