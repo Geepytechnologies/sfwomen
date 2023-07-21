@@ -5,7 +5,7 @@ type Props = {};
 
 const Card = (props: Props) => {
   return (
-    <div className="flex items-end">
+    <div className="flex items-center">
       <div className="max-h-[400px] max-w-[400px] rounded-tl-md bg-[white] relative shadow-lg flex items-center justify-center">
         <img
           src="/shapes.png"

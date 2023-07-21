@@ -7,14 +7,14 @@ type Props = {};
 const Footer = (props: Props) => {
   const year = new Date().getFullYear();
   return (
-    <footer className="flex-0 bg-brown py-9 text-[rgba(255,255,255,0.8)]">
+    <footer className="flex-0 bg-brown py-9 mt-9 text-[rgba(255,255,255,0.8)]">
       <div className="flex items-center flex-col md:flex-row justify-center gap-9">
         <div>
           <div className="font-danc font-[500] text-[40px]">
             Spirtfilledwomen
           </div>
 
-          <ul>
+          <ul className="flex flex-col gap-3">
             <li>Upcoming Programs</li>
             <li>Past programs and Experience</li>
             <li>Sermons</li>
@@ -34,7 +34,7 @@ const Footer = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="hidden md:flex flex-col gap-4">
           <div>
             <h1 className="font-lora font-[600] text-center text-[40px]">
               Stay Connected
@@ -77,7 +77,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 p-2">
         <div className="text-light text-center w-full flex items-center justify-center">
           <p>Copyright &#169; {year} Spiritfilledwomen. All rights reserved.</p>
         </div>
