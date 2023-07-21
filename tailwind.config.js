@@ -9,13 +9,19 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#E91E62",
+        brown: "#331725",
+      },
+    },
     fontFamily: {
       mont: ["Montserrat", "sans-serif"],
       rob: ["Roboto", "sans-serif"],
       danc: ["Dancing Script", "cursive"],
       popp: ["Poppins", "sans-serif"],
       open: ["Open Sans", "sans-serif"],
+      lora: ["Lora", "serif"],
     },
   },
   plugins: [],
