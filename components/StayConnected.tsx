@@ -27,8 +27,8 @@ const StayConnected = (props: Props) => {
         phone,
         email,
       });
-      console.log(res.data);
-      if (res.status == 201) {
+      // console.log(res.data);
+      if (res?.status == 201) {
         setMessage("Thank you for subscribing");
         setStatus("success");
         dispatch(notificationShow());

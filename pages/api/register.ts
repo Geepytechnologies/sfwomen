@@ -46,6 +46,10 @@ export default async function handler(
     subject: "Spiritfilledwomen",
     html: personalizedEmail,
   };
+  //   await Alabasterinvites.findOne({$or: [
+  //     { phone: phone },
+  //     { email: email }
+  //   ]})
 
   await dbConnect();
   if (method === "POST") {

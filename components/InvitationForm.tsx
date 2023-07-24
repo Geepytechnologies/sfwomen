@@ -32,7 +32,7 @@ const InvitationForm = (props: Props) => {
         phone,
         email,
       });
-      if (res.status == 201) {
+      if (res?.status == 201) {
         setMessage("Attendance has been recorded");
         setStatus("success");
         dispatch(notificationShow());
