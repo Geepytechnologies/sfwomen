@@ -36,7 +36,7 @@ const StayConnected = (props: Props) => {
       if (res.status == 400) {
         setMessage("You're already a subscriber");
         setStatus("warning");
-        dispatch(notificationShow);
+        dispatch(notificationShow());
       }
     } catch (error) {
     } finally {

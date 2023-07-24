@@ -26,7 +26,7 @@ const Notification = ({ message, status }: Props) => {
   }
 
   return (
-    <div className="bg-[rgba(0,0,0,0.5)]  fixed top-0 flex items-center z-50 justify-center min-h-screen w-full">
+    <div className="bg-[rgba(0,0,0,0.5)]  fixed top-0 flex items-center z-[999] justify-center min-h-screen w-full">
       <motion.div
         initial={{ opacity: 0 }}
         transition={{ duration: 0.7 }}
