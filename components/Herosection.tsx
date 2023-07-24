@@ -17,8 +17,6 @@ const Herosection = (props: Props) => {
   return (
     <Swiper
       ref={swiperRef}
-      spaceBetween={30}
-      centeredSlides={true}
       pagination={false}
       effect={"fade"}
       autoplay={{
