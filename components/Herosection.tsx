@@ -13,18 +13,14 @@ type Props = {};
 
 const Herosection = (props: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const swiperRef = useRef(null);
   return (
     <Swiper
-      ref={swiperRef}
-      pagination={false}
-      effect={"fade"}
       autoplay={{
         delay: 4000,
         disableOnInteraction: false,
       }}
-      navigation={false}
       modules={[EffectFade, Autoplay, Pagination, Navigation]}
+      {...(props as any)}
       className="mySwiper"
     >
       <SwiperSlide>
