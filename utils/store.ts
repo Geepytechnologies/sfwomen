@@ -1,6 +1,8 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import userReducer from "../utils/userSlice";
 import requestReducer from "../utils/request";
+import modalReducer from "../utils/modal";
+import notificationReducer from "../utils/notification";
 import {
   persistStore,
   persistReducer,
@@ -21,11 +23,13 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer,
   request: requestReducer,
+  modal: modalReducer,
+  notification: notificationReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

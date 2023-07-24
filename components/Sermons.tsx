@@ -19,7 +19,7 @@ const Sermons = (props: Props) => {
         </h1>
       </div>
       <div>
-        <div className="border h-9 w-9 flex items-center justify-center rounded-full border-[rgba(255,255,255,0.3)] text-white p-[7px] ease-in-out duration-150 transition-[border-color] hover:border-[rgba(255,255,255,0.9)] ">
+        <div className="border h-9 w-9 flex animate-pulse items-center justify-center rounded-full border-[rgba(255,255,255,0.3)] text-white p-[7px] ease-in-out duration-150 transition-[border-color] hover:border-[rgba(255,255,255,0.9)] ">
           <BsFillMicFill />
         </div>
       </div>

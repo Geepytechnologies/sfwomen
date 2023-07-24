@@ -8,10 +8,16 @@ const Footer = (props: Props) => {
   const year = new Date().getFullYear();
   return (
     <footer className="flex-0 bg-brown py-9 mt-9 text-[rgba(255,255,255,0.8)]">
-      <div className="flex items-center flex-col md:flex-row justify-center gap-9">
+      <div className="flex p-2 items-center flex-col md:flex-row justify-center gap-9">
         <div>
-          <div className="font-danc font-[500] text-[40px]">
-            Spirtfilledwomen
+          <div className="flex items-center gap-2">
+            <img
+              src="/logowhite.jpg"
+              className="w-[50px] h-[50px] rounded-lg"
+            />
+            <span className="font-danc font-[500] text-[40px]">
+              Spirtfilledwomen
+            </span>
           </div>
 
           <ul className="flex flex-col gap-3">
@@ -36,7 +42,7 @@ const Footer = (props: Props) => {
         </div>
         <div className="hidden md:flex flex-col gap-4">
           <div>
-            <h1 className="font-lora font-[600] text-center text-[40px]">
+            <h1 className="font-lora font-[600] text-center text-[30px]">
               Stay Connected
             </h1>
             <h2 className="text-[rgba(255,255,255,0.3)] ease-in-out duration-150 text-center transition-[text-color] hover:text-[rgba(255,255,255,0.9)]">
@@ -44,7 +50,7 @@ const Footer = (props: Props) => {
               messages.
             </h2>
           </div>
-          <div className="flex items-center flex-col md:flex-row  gap-4">
+          <div className="flex items-center flex-col lg:flex-row  gap-4">
             <div className="flex flex-col gap-1">
               <label>Full Name</label>
               <input
@@ -71,7 +77,7 @@ const Footer = (props: Props) => {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <div className="border-[rgba(255,255,255,0.3)] border max-w-[200px] text-center py-2 px-3 text-white rounded-lg shadow-md font-[500] font-mont ease-in-out duration-150 transition-[border-color] hover:border-[rgba(255,255,255,0.9)]">
+            <div className="border-[rgba(255,255,255,0.3)] border min-w-[200px] text-center py-2 px-3 text-white rounded-lg shadow-md font-[500] font-mont ease-in-out duration-150 transition-[border-color] hover:border-[rgba(255,255,255,0.9)]">
               Submit
             </div>
           </div>

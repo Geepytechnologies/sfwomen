@@ -2,13 +2,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AiOutlineInstagram, AiOutlineYoutube } from "react-icons/ai";
 import { LuFacebook } from "react-icons/lu";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import ImageSlider from "./ImageSlider";
 
 type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <div className="bg-[url('/womenpraying-min.jpg')] min-h-[400px] w-full md:min-h-[600px] overflow-hidden text-white relative bg-cover flex gap-3">
+    <div className="bg-[url('/sfwomen.jpg')] min-h-[400px] w-full md:min-h-[600px] overflow-hidden text-white relative bg-cover flex gap-3">
       <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-50"></div>
       <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>
       <div className="absolute top-0 h-full w-full flex flex-col  items-center justify-center gap-6 md:flex-row">

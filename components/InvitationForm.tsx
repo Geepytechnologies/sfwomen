@@ -1,12 +1,15 @@
-import React, { ChangeEvent, useState } from "react";
+import { modalHide } from "@/utils/modal";
+import React, { useState } from "react";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import { notificationShow } from "@/utils/notification";
 import axios from "axios";
 import Notification from "./Notification";
-import { useDispatch, useSelector } from "react-redux";
-import { notificationShow } from "@/utils/notification";
 
 type Props = {};
 
-const StayConnected = (props: Props) => {
+const InvitationForm = (props: Props) => {
   const [firstname, setFirstname] = useState<String>();
   const [lastname, setLastname] = useState<String>();
   const [phone, setPhone] = useState<String>();
@@ -16,27 +19,28 @@ const StayConnected = (props: Props) => {
   const [status, setStatus] = useState<String>("");
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-
+  const handleToggleModal = () => {
+    dispatch(modalHide());
+  };
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post("/api/subscribe", {
+      const res = await axios.post("/api/register", {
         firstname,
         lastname,
         phone,
         email,
       });
-      console.log(res.data);
       if (res.status == 201) {
-        setMessage("Thank you for subscribing");
+        setMessage("Attendance has been recorded");
         setStatus("success");
         dispatch(notificationShow());
       }
       if (res.status == 400) {
-        setMessage("You're already a subscriber");
+        setMessage("You've already booked your spot");
         setStatus("warning");
-        dispatch(notificationShow);
+        dispatch(notificationShow());
       }
     } catch (error) {
     } finally {
@@ -46,73 +50,69 @@ const StayConnected = (props: Props) => {
   return (
     <>
       {show && <Notification message={message} status={status} />}
-      <div className=" flex items-center justify-center">
-        <div className="w-[80%] py-9 flex flex-col gap-4 items-center justify-center">
-          <div className="flex items-center gap-3">
+      <div className="bg-[rgba(0,0,0,0.5)]  fixed top-0 flex items-center z-50 justify-center min-h-screen w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.7 }}
+          animate={{ opacity: 1 }}
+          className="bg-white pb-4 overflow-y-scroll rounded-lg w-[95%] h-[90%] md:h-[80%] md:w-[70%]"
+        >
+          <div className="flex cursor-pointer items-center justify-end p-2">
+            <AiOutlineCloseCircle
+              onClick={handleToggleModal}
+              className="text-brown font-[500] text-[20px]"
+            />
+          </div>
+          <div className="flex items-center justify-center gap-3">
             <div className="w-[100px] h-[1px] bg-[#E91E62]"></div>
-            <div className="tracking-[8px] text-[12px] uppercase text-gray-500 font-open">
-              Contact
+            <div className="tracking-[8px] text-[12px] uppercase text-brown font-open">
+              Presents
             </div>
             <div className="w-[100px] h-[1px] bg-[#E91E62]"></div>
           </div>
-          <div>
-            <h1 className="font-lora font-[600] text-center text-[40px]">
-              Stay Connected
-            </h1>
-            <h2 className="text-gray-500">
-              Subscribe to our news letter, get emails filled with impactful
-              messages.
-            </h2>
-          </div>
+          <div className="aspect-video bg-[url('/alabaster.png')] bg-cover shadow-md border-2 border-white m-2 rounded-lg"></div>
           <form onSubmit={handleSubmit}>
-            <div className="grid items-center grid-cols-1 md:grid-cols-2  gap-4">
+            <div className="flex items-center flex-col font-mont font-[500]  gap-4">
               <div className="flex flex-col gap-1">
                 <label>First Name</label>
                 <input
                   type="text"
-                  required
+                  onChange={(e) => setFirstname(e.target.value)}
                   placeholder="Gracey"
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    setFirstname(e.target.value)
-                  }
-                  className="border outline-0 text-gray-700 border-gray-500 py-2 px-5 rounded-lg"
+                  className="border outline-0 text-gray-700 border-gray-500 p-2 rounded-lg"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <label>Last Name</label>
                 <input
                   type="text"
-                  placeholder="Ruth"
                   onChange={(e) => setLastname(e.target.value)}
-                  className="border outline-0 text-gray-700 border-gray-500 py-2 px-5 rounded-lg"
+                  placeholder="Ruth"
+                  className="border outline-0 text-gray-700 border-gray-500 p-2 rounded-lg"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <label>Phone Number</label>
                 <input
                   type="number"
-                  required
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="08102223334"
-                  className="border outline-0 text-gray-700 border-gray-500 py-2 px-5 rounded-lg"
+                  className="border outline-0 text-gray-700 border-gray-500 p-2 rounded-lg"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <label>Email</label>
                 <input
                   type="email"
-                  required
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="gracey@mail.com"
-                  className="border outline-0 text-gray-700 border-gray-500 py-2 px-5 rounded-lg"
+                  className="border outline-0 text-gray-700 border-gray-500 p-2 rounded-lg"
                 />
               </div>
-            </div>
-            <div className=" mt-4 flex justify-center">
               {!loading ? (
                 <button
                   type="submit"
-                  className="bg-brown py-2 px-5 text-white rounded-lg shadow-md font-[500] font-mont"
+                  className="bg-brown py-2 px-3 text-white rounded-lg shadow-md font-[500] font-mont"
                 >
                   Submit
                 </button>
@@ -127,10 +127,10 @@ const StayConnected = (props: Props) => {
               )}
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </>
   );
 };
 
-export default StayConnected;
+export default InvitationForm;

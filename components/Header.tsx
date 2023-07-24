@@ -13,7 +13,12 @@ const Header = (props: Props) => {
   return (
     <header className="flex-0 flex flex-col sticky top-0 z-50 w-full items-center min-h-[80px] justify-between">
       <div className="flex flex-row bg-white w-full items-center py-3 justify-between px-3">
-        <div className="font-danc font-[500] text-[40px]">Spirtfilledwomen</div>
+        <div className="flex items-center gap-2">
+          <img src="/logo.png" className="w-[50px] h-[50px]" />
+          <span className="font-danc text-gray-700 font-[500] text-[30px] md:text-[40px]">
+            Spirtfilledwomen
+          </span>
+        </div>
         <div>
           <motion.ul
             initial={{
@@ -29,7 +34,7 @@ const Header = (props: Props) => {
             transition={{
               duration: 1.5,
             }}
-            className="text-gray-300 hidden  md:flex gap-12 text-[20px] items-center justify-center"
+            className="text-gray-500 hidden font-pop  md:flex gap-4 text-[20px] items-center justify-center"
           >
             <li>Gallery</li>
             <li>Sermons</li>
@@ -51,7 +56,7 @@ const Header = (props: Props) => {
             transition={{
               duration: 1.5,
             }}
-            className="flex flex-row lg:hidden  text-[30px] font-[500]  text-gray-300 items-center"
+            className="flex flex-row md:hidden  text-[30px] font-[500]  text-gray-500 items-center"
           >
             {!menu && <BiMenuAltRight onClick={() => togglemenu()} />}
             {menu && <AiOutlineClose onClick={() => togglemenu()} />}
@@ -59,10 +64,10 @@ const Header = (props: Props) => {
         </div>
       </div>
       <div
-        className={`  ${
+        className={` bg-brown ${
           menu
             ? "max-h-[200px] overflow-hidden bg-brown flex items-center w-full h-[200px] py-4 transition-[max-height] duration-500 ease-in-out "
-            : "max-h-[0px] overflow-hidden h-[200px]  transition-[max-height] duration-500 ease-in-out"
+            : "max-h-[0px] overflow-hidden h-[200px] w-full transition-[max-height] duration-500 ease-in-out"
         }`}
       >
         <div className="space-y-3 w-full h-full flex flex-col items-center justify-center text-white">

@@ -26,7 +26,7 @@ export default async function handler(
     },
   });
   //read email template
-  const filePath = path.join(process.cwd(), "public", "test.html");
+  const filePath = path.join(process.cwd(), "public", "alabaster.html");
   const fileContent = await fs.promises.readFile(filePath, "utf-8");
   // Replace [Username] with actual username
   const username = "John Doe";

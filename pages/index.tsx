@@ -8,12 +8,13 @@ import StayConnected from "@/components/StayConnected";
 import Upcoming from "@/components/Upcoming";
 import Sermons from "@/components/Sermons";
 import Devotional from "@/components/Devotional";
+import Herosection from "@/components/Herosection";
 
 export default function Home() {
   return (
     <>
       <Layout>
-        <Hero />
+        <Herosection />
         <StayConnected />
         {/* <Devotional /> */}
         <Upcoming />
