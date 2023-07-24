@@ -33,12 +33,12 @@ const StayConnected = (props: Props) => {
         setStatus("success");
         dispatch(notificationShow());
       }
-      if (res.status == 400) {
+    } catch (error: any) {
+      if (error?.response.status == 400) {
         setMessage("You're already a subscriber");
         setStatus("warning");
         dispatch(notificationShow());
       }
-    } catch (error) {
     } finally {
       setLoading(false);
     }

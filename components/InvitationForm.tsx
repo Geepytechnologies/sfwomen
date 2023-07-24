@@ -37,12 +37,12 @@ const InvitationForm = (props: Props) => {
         setStatus("success");
         dispatch(notificationShow());
       }
-      if (res.status == 400) {
+    } catch (error: any) {
+      if (error?.response.status == 400) {
         setMessage("You've already booked your spot");
         setStatus("warning");
         dispatch(notificationShow());
       }
-    } catch (error) {
     } finally {
       setLoading(false);
     }
@@ -55,7 +55,7 @@ const InvitationForm = (props: Props) => {
           initial={{ opacity: 0 }}
           transition={{ duration: 0.7 }}
           animate={{ opacity: 1 }}
-          className="bg-white pb-4 overflow-y-scroll rounded-lg w-[95%] h-[90%] md:h-[80%] md:w-[70%]"
+          className="bg-white pb-4 overflow-y-scroll rounded-lg w-[95%] h-[90%] md:h-[70%] md:w-[70%]"
         >
           <div className="flex cursor-pointer items-center justify-end p-2">
             <AiOutlineCloseCircle

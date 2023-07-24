@@ -31,7 +31,7 @@ const Notification = ({ message, status }: Props) => {
         initial={{ opacity: 0 }}
         transition={{ duration: 0.7 }}
         animate={{ opacity: 1 }}
-        className="bg-white pb-4 rounded-lg w-[250px] h-[100px]"
+        className="bg-white pb-4 rounded-lg min-w-[250px] h-[100px]"
       >
         <div className="flex cursor-pointer items-center justify-end p-2">
           <AiOutlineCloseCircle
@@ -39,9 +39,11 @@ const Notification = ({ message, status }: Props) => {
             className="text-gray-500 font-[500] text-[20px]"
           />
         </div>
-        <div className="flex gap-2 items-center justify-center">
+        <div className="flex gap-2 w-full px-3 items-center justify-center">
           <BsFillPatchCheckFill color={toastcolor} className="text-[30px]" />
-          <p className="font-[500] text-[20px] font-mont">{message}</p>
+          <p className="font-[400] text-center text-[16px] font-mont">
+            {message}
+          </p>
         </div>
       </motion.div>
     </div>
