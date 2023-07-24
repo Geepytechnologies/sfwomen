@@ -13,8 +13,15 @@ type Props = {};
 
 const Herosection = (props: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const swiperRef = useRef(null);
+
   return (
     <Swiper
+      effect={"fade"}
+      ref={swiperRef}
+      centeredSlides={true}
+      spaceBetween={30}
+      navigation={false}
       autoplay={{
         delay: 4000,
         disableOnInteraction: false,
@@ -35,11 +42,11 @@ const Herosection = (props: Props) => {
             <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
             <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
               <motion.p
-                animate={isActive ? "show" : "hide"}
+                whileInView={isActive ? "show" : "hide"}
                 transition={{ duration: 1.2 }}
                 variants={{
                   show: { x: 0 },
-                  hide: { x: -400 },
+                  hide: { x: -20 },
                 }}
                 className="lg:text-[96px] md:text-[60px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
               >
@@ -64,7 +71,7 @@ const Herosection = (props: Props) => {
         {({ isActive }) => (
           <div className="relative h-[400px] text-white md:h-[500px] w-full">
             <motion.img
-              src="/sfwomen.jpg"
+              src="/slider3.jpg"
               alt=""
               className="h-full w-full object-cover"
             />
@@ -72,18 +79,18 @@ const Herosection = (props: Props) => {
             <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
             <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
               <motion.p
-                animate={isActive ? "show" : "hide"}
+                whileInView={isActive ? "show" : "hide"}
                 transition={{ duration: 1.2 }}
                 variants={{
                   show: { x: 0 },
-                  hide: { x: -400 },
+                  hide: { x: -20 },
                 }}
                 className="lg:text-[96px] md:text-[60px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
               >
                 Spirit filled women
               </motion.p>
               <motion.p
-                animate={isActive ? "show2" : "hide2"}
+                whileInView={isActive ? "show2" : "hide2"}
                 transition={{ duration: 1.2 }}
                 variants={{
                   show2: { opacity: 1, y: 0 },
@@ -113,7 +120,7 @@ const Herosection = (props: Props) => {
                 transition={{ duration: 1.2 }}
                 variants={{
                   show: { x: 0 },
-                  hide: { x: -400 },
+                  hide: { x: -20 },
                 }}
                 className="lg:text-[96px] md:text-[60px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
               >
