@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         primary: "#E91E62",
         brown: "#331725",
+        secondary: "#4d0a7b",
       },
     },
     fontFamily: {
@@ -22,6 +23,8 @@ module.exports = {
       popp: ["Poppins", "sans-serif"],
       open: ["Open Sans", "sans-serif"],
       lora: ["Lora", "serif"],
+      barlow: ["Barlow Condensed", "sans-serif"],
+      arial: ["arial", "sans-serif"],
     },
   },
   plugins: [],

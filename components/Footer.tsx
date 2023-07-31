@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { AiOutlineInstagram, AiOutlineYoutube } from "react-icons/ai";
 import { LuFacebook } from "react-icons/lu";
@@ -10,15 +11,17 @@ const Footer = (props: Props) => {
     <footer className="flex-0 bg-brown py-9 mt-9 text-[rgba(255,255,255,0.8)]">
       <div className="flex p-2 items-center flex-col md:flex-row justify-center gap-9">
         <div>
-          <div className="flex items-center gap-2">
-            <img
-              src="/logowhite.jpg"
-              className="w-[50px] h-[50px] rounded-lg"
-            />
-            <span className="font-danc font-[500] text-[40px]">
-              Spirtfilledwomen
-            </span>
-          </div>
+          <Link href="/">
+            <div className="flex items-center gap-2 mb-3">
+              <img
+                src="/logowhite.jpg"
+                className="w-[50px] h-[50px] rounded-lg"
+              />
+              <span className="font-lora font-[500] text-[20px] md:text-[30px]">
+                SpiritFilledWomen
+              </span>
+            </div>
+          </Link>
 
           <ul className="flex flex-col gap-3">
             <li>Upcoming Programs</li>

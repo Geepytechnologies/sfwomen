@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import Link from "next/link";
 
 type Props = {};
 
@@ -11,14 +12,16 @@ const Header = (props: Props) => {
     setMenu(!menu);
   };
   return (
-    <header className="flex-0 flex flex-col sticky top-0 z-50 w-full items-center min-h-[80px] justify-between">
+    <header className="flex-0 flex flex-col sticky top-0 z-[999] w-full items-center min-h-[90px] justify-between">
       <div className="flex flex-row bg-white w-full items-center py-3 justify-between px-3">
-        <div className="flex items-center gap-2">
-          <img src="/logo.png" className="w-[50px] h-[50px]" />
-          <span className="font-danc text-gray-700 font-[500] text-[30px] md:text-[40px]">
-            Spirtfilledwomen
-          </span>
-        </div>
+        <Link href="/">
+          <div className="flex items-center gap-2">
+            <img src="/logo.png" className="w-[50px] h-[50px]" />
+            <span className="font-lora text-gray-800 tracking-[1px] font-[400] text-[20px] md:text-[30px]">
+              SpiritFilledWomen
+            </span>
+          </div>
+        </Link>
         <div>
           <motion.ul
             initial={{
@@ -34,13 +37,23 @@ const Header = (props: Props) => {
             transition={{
               duration: 1.5,
             }}
-            className="text-gray-500 hidden font-pop  md:flex gap-4 text-[20px] items-center justify-center"
+            className="text-black hidden font-pop  md:flex gap-4 text-[20px] items-center justify-center"
           >
-            <li>Gallery</li>
-            <li>Sermons</li>
-            <li>Events</li>
-            <li>Mission</li>
-            <li>Contact</li>
+            <li>
+              <Link href={"/gallery"}>Gallery</Link>
+            </li>
+            <li>
+              <Link href={"/sermons"}>Sermons</Link>
+            </li>
+            <li>
+              <Link href={"/events"}>Events</Link>
+            </li>
+            <li>
+              <Link href={"/mission"}>Mission</Link>
+            </li>
+            <li>
+              <Link href={"/contact"}>Contact</Link>
+            </li>
           </motion.ul>
           <motion.div
             initial={{
