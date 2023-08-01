@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <>
       <Layout>
-        {/* <Herosection /> */}
-        {/* <Mission /> */}
+        <Herosection />
+        <Mission />
         <Recentevents />
         <StayConnected />
         {/* <Devotional /> */}

@@ -31,19 +31,19 @@ const Recentevents = (props: Props) => {
           initial={{ x: -100, y: 20 }}
           transition={{ duration: 0.7 }}
           whileInView={{ x: 1, y: 1 }}
-          className=" w-[90%] rounded-[20px] shadow-xl bg-white flex gap-4"
+          className=" w-[90%] rounded-[20px] shadow-xl bg-white flex-col md:flex-row flex gap-4"
         >
-          <div className="relative min-w-[300px] min-h-[300px]  rounded-l-[20px]">
+          <div className="relative min-w-[300px] min-h-[300px] rounted-t-[20px]  md:rounded-l-[20px]">
             <Image
               src={"/alabaster.png"}
               alt="alabaster"
               fill
               sizes=""
-              className="rounded-l-[20px]"
+              className="md:rounded-l-[20px] rounded-t-[20px]"
             />
           </div>
           <div className="flex items-center">
-            <div className="font-mont py-3">
+            <div className="font-mont py-3 pl-2">
               <p className="text-[#4d0a7b] text-[20px] font-[500]">Theme</p>
               <p className="text-black font-[700] text-[32px]">Alabaster</p>
               <p className="text-gray-600">
