@@ -77,9 +77,9 @@ const Header = (props: Props) => {
         </div>
       </div>
       <div
-        className={` bg-brown ${
+        className={` bg-secondary ${
           menu
-            ? "max-h-[200px] overflow-hidden bg-brown flex items-center w-full h-[200px] py-4 transition-[max-height] duration-500 ease-in-out "
+            ? "max-h-[200px] overflow-hidden bg-secondary flex items-center w-full h-[200px] py-4 transition-[max-height] duration-500 ease-in-out "
             : "max-h-[0px] overflow-hidden h-[200px] w-full transition-[max-height] duration-500 ease-in-out"
         }`}
       >

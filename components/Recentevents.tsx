@@ -33,13 +33,13 @@ const Recentevents = (props: Props) => {
           whileInView={{ x: 1, y: 1 }}
           className=" w-[90%] rounded-[20px] shadow-xl bg-white flex-col md:flex-row flex gap-4"
         >
-          <div className="relative min-w-[300px] min-h-[300px] rounted-t-[20px]  md:rounded-l-[20px]">
+          <div className="relative min-w-[300px] min-h-[300px] md:rounded-bl-[20px] md:rounded-tr-none rounded-tl-[20px] rounded-tr-[20px]">
             <Image
               src={"/alabaster.png"}
               alt="alabaster"
               fill
-              sizes=""
-              className="md:rounded-l-[20px] rounded-t-[20px]"
+              sizes="300"
+              className=" md:rounded-bl-[20px] md:rounded-tr-none rounded-tl-[20px] rounded-tr-[20px]"
             />
           </div>
           <div className="flex items-center">
