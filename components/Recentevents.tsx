@@ -31,7 +31,7 @@ const Recentevents = (props: Props) => {
           initial={{ x: -100, y: 20 }}
           transition={{ duration: 0.7 }}
           whileInView={{ x: 1, y: 1 }}
-          className=" w-[90%] rounded-[20px] shadow-xl bg-white flex-col md:flex-row flex gap-4"
+          className=" w-[80%] md:w-[70%] lg:w-[60%] rounded-[20px] shadow-xl bg-white flex-col md:flex-row flex gap-4"
         >
           <div className="relative min-w-[300px] min-h-[300px] md:rounded-bl-[20px] md:rounded-tr-none rounded-tl-[20px] rounded-tr-[20px]">
             <Image

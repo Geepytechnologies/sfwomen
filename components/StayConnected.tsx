@@ -46,26 +46,30 @@ const StayConnected = (props: Props) => {
   return (
     <>
       {show && <Notification message={message} status={status} />}
-      <div className=" flex items-center justify-center">
+      <div className=" flex items-center justify-center w-full">
         <div className="w-[80%] py-9 flex flex-col gap-4 items-center justify-center">
-          <div className="flex items-center gap-3">
-            <div className="w-[100px] h-[1px] bg-[#E91E62]"></div>
-            <div className="tracking-[8px] text-[12px] uppercase text-gray-500 font-open">
-              Contact
+          {/* header */}
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex items-center gap-3">
+              <div className="w-[100px] h-[1px] bg-[#E91E62]"></div>
+              <div className="tracking-[8px] text-[12px] uppercase text-gray-500 font-open">
+                Contact
+              </div>
+              <div className="w-[100px] h-[1px] bg-[#E91E62]"></div>
             </div>
-            <div className="w-[100px] h-[1px] bg-[#E91E62]"></div>
+            <div>
+              <h1 className="font-lora font-[600] text-center text-[40px]">
+                Stay Connected
+              </h1>
+              <h2 className="text-gray-500">
+                Subscribe to our news letter, get emails filled with impactful
+                messages.
+              </h2>
+            </div>
           </div>
-          <div>
-            <h1 className="font-lora font-[600] text-center text-[40px]">
-              Stay Connected
-            </h1>
-            <h2 className="text-gray-500">
-              Subscribe to our news letter, get emails filled with impactful
-              messages.
-            </h2>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <div className="grid items-center grid-cols-1 md:grid-cols-2  gap-4">
+          {/* form */}
+          <form onSubmit={handleSubmit} className=" w-full">
+            <div className="grid items-center grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1">
                 <label>First Name</label>
                 <input

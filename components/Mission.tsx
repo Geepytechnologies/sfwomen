@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsChevronDoubleRight } from "react-icons/bs";
+import Image from "next/image";
 
 type Props = {};
 
 const Mission = (props: Props) => {
+  const [imageloaded, setImageLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
   return (
     <div className="w-full flex flex-col md:flex-row gap-9 p-5 my-[40px] items-center justify-center">
-      <div className="relative bg-[url('/slider4.jpg')] bg-cover bg-center min-w-[400px] min-h-[400px] rounded-[20px]">
-        <div className="absolute top-0 w-full h-full rounded-[20px] bg-[#3a0103] opacity-20"></div>
-        <div className="absolute top-0 h-full w-full rounded-[20px] bg-[rgba(0,0,0,0.2)]"></div>{" "}
+      <div className="relative min-w-[400px] min-h-[400px] rounded-[20px]">
+        <Image
+          src={"/slider4.jpg"}
+          alt="mission"
+          fill
+          sizes="400"
+          className="bg-cover bg-center rounded-[20px]"
+          onLoad={handleImageLoad}
+        />
+        {imageloaded && (
+          <>
+            <div className="absolute top-0 w-full h-full rounded-[20px] bg-[#3a0103] opacity-20"></div>
+            <div className="absolute top-0 h-full w-full rounded-[20px] bg-[rgba(0,0,0,0.1)]"></div>{" "}
+          </>
+        )}
       </div>
       <div className="font-mont">
         <p className="text-[#4d0a7b] text-[20px] font-[500]">Mission</p>

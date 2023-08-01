@@ -43,7 +43,7 @@ const Footer = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="hidden md:flex flex-col gap-4">
+        {/* <div className="hidden md:flex flex-col gap-4">
           <div>
             <h1 className="font-lora font-[600] text-center text-[30px]">
               Stay Connected
@@ -84,7 +84,7 @@ const Footer = (props: Props) => {
               Submit
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="mt-4 p-2">
         <div className="text-light text-center w-full flex items-center justify-center">

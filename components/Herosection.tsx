@@ -19,6 +19,7 @@ const Herosection = (props: Props) => {
   const [slide3, setSlide3] = useState(false);
   const [slide4, setSlide4] = useState(false);
   const [slide5, setSlide5] = useState(false);
+  const [slide6, setSlide6] = useState(false);
   const swiperRef = useRef(null);
 
   const handleImageLoad = (slide: Number) => {
@@ -37,6 +38,9 @@ const Herosection = (props: Props) => {
         break;
       case 5:
         setSlide5(true);
+        break;
+      case 6:
+        setSlide6(true);
         break;
       default:
     }
@@ -73,6 +77,18 @@ const Herosection = (props: Props) => {
                 <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-30"></div>
                 <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2]"></div>{" "}
                 <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
+                  <div className="bg-white shadow-xl flex items-center justify-center rounded-full w-[60px] h-[60px]">
+                    <Image
+                      alt="logo"
+                      src={"/3d.png"}
+                      width={50}
+                      height={50}
+                      className={`${
+                        isActive &&
+                        "transition-transform ease-in-out duration-500 rotate-[360deg]"
+                      } `}
+                    />
+                  </div>
                   <motion.p
                     whileInView={isActive ? "show" : "hide"}
                     transition={{ duration: 1.2 }}
@@ -114,9 +130,21 @@ const Herosection = (props: Props) => {
             />
             {slide2 && (
               <>
-                <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-50"></div>
+                <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-30"></div>
                 <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
                 <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
+                  <div className="bg-white shadow-xl flex items-center justify-center rounded-full w-[60px] h-[60px]">
+                    <Image
+                      alt="logo"
+                      src={"/3d.png"}
+                      width={50}
+                      height={50}
+                      className={`${
+                        isActive &&
+                        "transition-transform ease-in-out duration-500 rotate-[360deg]"
+                      } `}
+                    />
+                  </div>
                   <motion.p
                     whileInView={isActive ? "show" : "hide"}
                     transition={{ duration: 1.2 }}
@@ -148,148 +176,224 @@ const Herosection = (props: Props) => {
       <SwiperSlide>
         {({ isActive }) => (
           <div className="relative h-[400px] text-white md:h-[500px] w-full">
-            <motion.img
-              src="/sfwomen.jpg"
-              alt=""
-              className="h-full w-full object-cover"
+            <Image
+              fill
+              src={"/sfwomen.jpg"}
+              alt="sliderImage"
+              className="object-cover object-center"
+              priority
+              onLoad={() => handleImageLoad(3)}
             />
-            <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-30"></div>
-            <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
-            <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
-              <motion.p
-                animate={isActive ? "show" : "hide"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show: { x: 0 },
-                  hide: { x: -20 },
-                }}
-                className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
-              >
-                Spirit Filled Women
-              </motion.p>
-              <motion.p
-                animate={isActive ? "show2" : "hide2"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show2: { opacity: 1, y: 0 },
-                  hide2: { opacity: 0, y: 20 },
-                }}
-                className="text-white"
-              >
-                ......Cultivating Transformational Leadership
-              </motion.p>
-            </div>
+            {slide3 && (
+              <>
+                <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-30"></div>
+                <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
+                <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
+                  <div className="bg-white shadow-xl flex items-center justify-center rounded-full w-[60px] h-[60px]">
+                    <Image
+                      alt="logo"
+                      src={"/3d.png"}
+                      width={50}
+                      height={50}
+                      className={`${
+                        isActive &&
+                        "transition-transform ease-in-out duration-500 rotate-[360deg]"
+                      } `}
+                    />
+                  </div>
+                  <motion.p
+                    animate={isActive ? "show" : "hide"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show: { x: 0 },
+                      hide: { x: -20 },
+                    }}
+                    className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
+                  >
+                    Spirit Filled Women
+                  </motion.p>
+                  <motion.p
+                    animate={isActive ? "show2" : "hide2"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show2: { opacity: 1, y: 0 },
+                      hide2: { opacity: 0, y: 20 },
+                    }}
+                    className="text-white"
+                  >
+                    ......Cultivating Transformational Leadership
+                  </motion.p>
+                </div>
+              </>
+            )}
           </div>
         )}
       </SwiperSlide>
       <SwiperSlide>
         {({ isActive }) => (
           <div className="relative h-[400px] text-white md:h-[500px] w-full">
-            <motion.img
-              src="/slider3.jpg"
-              alt=""
-              className="h-full w-full object-cover"
+            <Image
+              fill
+              src={"/slider3.jpg"}
+              alt="sliderImage"
+              className="object-cover object-center"
+              priority
+              onLoad={() => handleImageLoad(4)}
             />
-            <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-50"></div>
-            <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
-            <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
-              <motion.p
-                animate={isActive ? "show" : "hide"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show: { x: 0 },
-                  hide: { x: -20 },
-                }}
-                className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
-              >
-                Spirit Filled Women
-              </motion.p>
-              <motion.p
-                animate={isActive ? "show2" : "hide2"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show2: { opacity: 1, y: 0 },
-                  hide2: { opacity: 0, y: 20 },
-                }}
-                className="text-white"
-              >
-                ......Cultivating Transformational Leadership
-              </motion.p>
-            </div>
+            {slide4 && (
+              <>
+                <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-30"></div>
+                <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
+                <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
+                  <div className="bg-white shadow-xl flex items-center justify-center rounded-full w-[60px] h-[60px]">
+                    <Image
+                      alt="logo"
+                      src={"/3d.png"}
+                      width={50}
+                      height={50}
+                      className={`${
+                        isActive &&
+                        "transition-transform ease-in-out duration-500 rotate-[360deg]"
+                      } `}
+                    />
+                  </div>
+                  <motion.p
+                    animate={isActive ? "show" : "hide"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show: { x: 0 },
+                      hide: { x: -20 },
+                    }}
+                    className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
+                  >
+                    Spirit Filled Women
+                  </motion.p>
+                  <motion.p
+                    animate={isActive ? "show2" : "hide2"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show2: { opacity: 1, y: 0 },
+                      hide2: { opacity: 0, y: 20 },
+                    }}
+                    className="text-white"
+                  >
+                    ......Cultivating Transformational Leadership
+                  </motion.p>
+                </div>
+              </>
+            )}
           </div>
         )}
       </SwiperSlide>
       <SwiperSlide>
         {({ isActive }) => (
           <div className="relative h-[400px] text-white md:h-[500px] w-full">
-            <motion.img
-              src="/slider4.jpg"
-              alt=""
-              className="h-full w-full object-cover"
+            <Image
+              fill
+              src={"/slider4.jpg"}
+              alt="sliderImage"
+              className="object-cover object-center"
+              priority
+              onLoad={() => handleImageLoad(5)}
             />
-            <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-50"></div>
-            <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
-            <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
-              <motion.p
-                animate={isActive ? "show" : "hide"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show: { x: 0 },
-                  hide: { x: -20 },
-                }}
-                className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
-              >
-                Spirit Filled Women
-              </motion.p>
-              <motion.p
-                animate={isActive ? "show2" : "hide2"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show2: { opacity: 1, y: 0 },
-                  hide2: { opacity: 0, y: 20 },
-                }}
-                className="text-white"
-              >
-                ......Cultivating Transformational Leadership
-              </motion.p>
-            </div>
+            {slide5 && (
+              <>
+                <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-30"></div>
+                <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
+                <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
+                  <div className="bg-white shadow-xl flex items-center justify-center rounded-full w-[60px] h-[60px]">
+                    <Image
+                      alt="logo"
+                      src={"/3d.png"}
+                      width={50}
+                      height={50}
+                      className={`${
+                        isActive &&
+                        "transition-transform ease-in-out duration-500 rotate-[360deg]"
+                      } `}
+                    />
+                  </div>
+                  <motion.p
+                    animate={isActive ? "show" : "hide"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show: { x: 0 },
+                      hide: { x: -20 },
+                    }}
+                    className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
+                  >
+                    Spirit Filled Women
+                  </motion.p>
+                  <motion.p
+                    animate={isActive ? "show2" : "hide2"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show2: { opacity: 1, y: 0 },
+                      hide2: { opacity: 0, y: 20 },
+                    }}
+                    className="text-white"
+                  >
+                    ......Cultivating Transformational Leadership
+                  </motion.p>
+                </div>
+              </>
+            )}
           </div>
         )}
       </SwiperSlide>
       <SwiperSlide>
         {({ isActive }) => (
           <div className="relative h-[400px] text-white md:h-[500px] w-full">
-            <motion.img
-              src="/slider5.jpg"
-              alt=""
-              className="h-full w-full object-cover"
+            <Image
+              fill
+              src={"/slider5.jpg"}
+              alt="sliderImage"
+              className="object-cover object-center"
+              priority
+              onLoad={() => handleImageLoad(6)}
             />
-            <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-50"></div>
-            <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
-            <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
-              <motion.p
-                animate={isActive ? "show" : "hide"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show: { x: 0 },
-                  hide: { x: -20 },
-                }}
-                className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
-              >
-                Spirit Filled Women
-              </motion.p>
-              <motion.p
-                animate={isActive ? "show2" : "hide2"}
-                transition={{ duration: 1.2 }}
-                variants={{
-                  show2: { opacity: 1, y: 0 },
-                  hide2: { opacity: 0, y: 20 },
-                }}
-                className="text-white"
-              >
-                ......Cultivating Transformational Leadership
-              </motion.p>
-            </div>
+            {slide6 && (
+              <>
+                <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-30"></div>
+                <div className="absolute top-0 h-full w-full bg-[rgba(0,0,0,0.2)]"></div>{" "}
+                <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
+                  <div className="bg-white shadow-xl flex items-center justify-center rounded-full w-[60px] h-[60px]">
+                    <Image
+                      alt="logo"
+                      src={"/3d.png"}
+                      width={50}
+                      height={50}
+                      className={`${
+                        isActive &&
+                        "transition-transform ease-in-out duration-500 rotate-[360deg]"
+                      } `}
+                    />
+                  </div>
+                  <motion.p
+                    animate={isActive ? "show" : "hide"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show: { x: 0 },
+                      hide: { x: -20 },
+                    }}
+                    className="lg:text-[86px] md:text-[50px] text-[30px] word-wrap md:text-start text-center font-mont font-[600]"
+                  >
+                    Spirit Filled Women
+                  </motion.p>
+                  <motion.p
+                    animate={isActive ? "show2" : "hide2"}
+                    transition={{ duration: 1.2 }}
+                    variants={{
+                      show2: { opacity: 1, y: 0 },
+                      hide2: { opacity: 0, y: 20 },
+                    }}
+                    className="text-white"
+                  >
+                    ......Cultivating Transformational Leadership
+                  </motion.p>
+                </div>
+              </>
+            )}
           </div>
         )}
       </SwiperSlide>

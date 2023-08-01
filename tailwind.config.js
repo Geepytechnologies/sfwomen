@@ -14,6 +14,7 @@ module.exports = {
         primary: "#E91E62",
         brown: "#331725",
         secondary: "#4d0a7b",
+        yello: "#c18604",
       },
     },
     fontFamily: {
