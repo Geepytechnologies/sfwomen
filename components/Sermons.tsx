@@ -27,7 +27,10 @@ const Sermons = (props: Props) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-center">
         {/* card1 */}
-        <div>
+        <div className="relative">
+          <div className="ribbon">
+            <span>SERMON</span>
+          </div>
           <div
             onMouseEnter={() => setCardHover(true)}
             onMouseLeave={() => setCardHover(false)}
@@ -68,7 +71,10 @@ const Sermons = (props: Props) => {
           </div>
         </div>
         {/* card2 */}
-        <div>
+        <div className="relative">
+          <div className="ribbon">
+            <span>SERMON</span>
+          </div>
           <div
             onMouseEnter={() => setCardHover(true)}
             onMouseLeave={() => setCardHover(false)}
@@ -109,7 +115,10 @@ const Sermons = (props: Props) => {
           </div>
         </div>
         {/* card3 */}
-        <div>
+        <div className="relative">
+          <div className="ribbon">
+            <span>SERMON</span>
+          </div>
           <div
             onMouseEnter={() => setCardHover(true)}
             onMouseLeave={() => setCardHover(false)}

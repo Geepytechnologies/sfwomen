@@ -16,19 +16,18 @@ const Mission = (props: Props) => {
           src={"/slider4.jpg"}
           alt="mission"
           fill
-          sizes="400"
-          className="bg-cover bg-center rounded-[20px]"
+          className="object-cover object-center rounded-[20px]"
           onLoad={handleImageLoad}
         />
         {imageloaded && (
           <>
-            <div className="absolute top-0 w-full h-full rounded-[20px] bg-[#3a0103] opacity-20"></div>
+            <div className="absolute top-0 w-full h-full rounded-[20px] bg-[#3a0103] opacity-10"></div>
             <div className="absolute top-0 h-full w-full rounded-[20px] bg-[rgba(0,0,0,0.1)]"></div>{" "}
           </>
         )}
       </div>
       <div className="font-mont">
-        <p className="text-[#4d0a7b] text-[20px] font-[500]">Mission</p>
+        <p className="text-[#4d0a7b] text-[20px] font-[600]">Mission</p>
         <p className="text-black font-[700] text-[32px]">SpiritFilledWomen</p>
         <p className="text-gray-600">
           The mission of the SpiritFilledWomen is to create a supportive and

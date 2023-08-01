@@ -23,7 +23,7 @@ const Footer = (props: Props) => {
             </div>
           </Link>
 
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col gap-3 mt-9">
             <li>Upcoming Programs</li>
             <li>Past programs and Experience</li>
             <li>Sermons</li>

@@ -9,8 +9,9 @@ type Props = {};
 const Recentevents = (props: Props) => {
   return (
     <div>
-      <div className="flex bg-[url('/worship.jpg')] relative min-h-[300px] bg-cover bg-center items-center flex-col py-6">
-        <div className="absolute top-0 w-full h-full bg-[#3a0103] opacity-50"></div>
+      <div className="flex bg-[url('/worship.jpg')] border-b-[3px] border-white shadow-xl  relative min-h-[200px] bg-cover bg-center items-center flex-col py-6">
+        <div className="absolute top-0 w-full h-full  bg-black opacity-20"></div>
+        <div className="absolute top-0 w-full h-full  bg-secondary opacity-50"></div>
         <div className="absolute top-0 w-full h-full flex items-center justify-center flex-col">
           <div className="flex items-center gap-3">
             <div className="w-[100px] h-[1px] bg-[#E91E62]"></div>

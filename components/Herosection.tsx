@@ -277,7 +277,7 @@ const Herosection = (props: Props) => {
                     }}
                     className="text-white"
                   >
-                    ......Cultivating Transformational Leadership
+                    ......Engaging In Community Outreach
                   </motion.p>
                 </div>
               </>
@@ -333,7 +333,7 @@ const Herosection = (props: Props) => {
                     }}
                     className="text-white"
                   >
-                    ......Cultivating Transformational Leadership
+                    ......Embracing Generational Mentorship
                   </motion.p>
                 </div>
               </>
@@ -389,7 +389,7 @@ const Herosection = (props: Props) => {
                     }}
                     className="text-white"
                   >
-                    ......Cultivating Transformational Leadership
+                    ......Spirit-Filled Leaders of Purpose and Impact
                   </motion.p>
                 </div>
               </>
